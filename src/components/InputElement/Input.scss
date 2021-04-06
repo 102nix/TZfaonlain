@@ -1,0 +1,16 @@
+.form-group{
+  display: flex;
+  align-items: center;
+  label{
+    font-weight: bold;
+  }
+}
+.form-control{
+  border-radius: 25px;
+  margin-left: 1rem;
+}
+@media (max-width: 414px){
+  .form-control{
+    margin-left: .5rem;
+  }
+}
