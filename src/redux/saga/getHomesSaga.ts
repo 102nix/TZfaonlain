@@ -7,7 +7,6 @@ import { actions } from '../allAC'
 function* getHomesWorker () {
   try {
     const response: ArrayAPIType = yield call (api.getAPIHomes)
-    yield console.log(response.data)
     yield put (actions.setAPIHomes(response.data))
   } catch (err) {
     console.log (err)

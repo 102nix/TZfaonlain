@@ -12,7 +12,7 @@ export const Home: React.FC<ValueStateType> = props => {
         <div className="img-and-label">
           <Card.Img variant="top" src={imgsArr[props.id! - 1]} />
           {
-           (+props.id! === 3 || +props.id! === 6 || +props.id! === 9 || +props.id! === 12)?   
+           (+props.id! === 3 || +props.id! === 6 || +props.id! === 9 || +props.id! === 12) ?   
             <div className="btn-danger label-buttom">Restaurant & Support available</div> :
             <div className="btn-info label-buttom">Independing living</div> 
           }

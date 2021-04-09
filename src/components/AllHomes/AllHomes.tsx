@@ -17,8 +17,8 @@ export const AllHomes: React.FC = () => {
   const data = useSelector((state: AppStateType) => state.homesReducer.data)
 
   if (data === null) dispatch(actions.getHomes())
-  
-  return(
+
+   return( 
     <div className="container">
       <div className="row all-homes">
         { data === null &&
@@ -26,8 +26,8 @@ export const AllHomes: React.FC = () => {
         }
         {
           data?.length !== 0 &&
-          data?.map((home: ValueStateType) => {
-            return <NavLink to={`/details/${home.id}`} className="nav-link" >
+          data?.map((home: ValueStateType) => ( 
+            <NavLink to={`/details/${home.id}`} className="nav-link" >
               <Home
                 id={home.id}
                 title={home.title}
@@ -36,7 +36,7 @@ export const AllHomes: React.FC = () => {
                 price={home.price}	
               />
             </NavLink>
-          })
+          ))
         }
         { 
           data !== null &&

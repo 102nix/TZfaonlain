@@ -24,16 +24,16 @@
           -webkit-transform: rotate(-45deg);
       }
     }
-
+  }
+  .nav-link{
+    padding: 0;
+    color: #000;
+  }
+  .card-title{
+    font-size: 18px;
   }
 }
-.nav-link{
-  padding: 0;
-  color: #000;
-}
-.card-title{
-  font-size: 18px;
-}
+
 @media(max-width: 414px){
   .nav-link{
     margin-top: 1rem;
