@@ -1,36 +1,37 @@
 .all-homes{
   display: flex;
   justify-content: center;
-
-  .actions{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .btn-light{
-    margin-top: 3rem;
-    border-radius: 25px;
-    padding: 8px 25px;
-    border: .5px solid rgb(153, 153, 153);
-    span{
-      i{
-        border: solid black;
-        border-width: 0 2px 2px 0;
-        display: inline-block;
-        padding: 3px;
-      }
-      .right{
-          transform: rotate(-45deg);
-          -webkit-transform: rotate(-45deg);
-      }
-    }
-  }
   .nav-link{
     padding: 0;
     color: #000;
   }
   .card-title{
     font-size: 18px;
+  }
+}
+.all-homes-bottom {
+  .actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btn-light{
+      margin-top: 3rem;
+      border-radius: 25px;
+      padding: 8px 25px;
+      border: .5px solid rgb(153, 153, 153);
+      span{
+        i{
+          border: solid black;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 3px;
+        }
+        .right{
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+      }
+    }
   }
 }
 

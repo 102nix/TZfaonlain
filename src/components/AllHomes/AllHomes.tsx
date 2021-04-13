@@ -38,15 +38,17 @@ export const AllHomes: React.FC = () => {
             </NavLink>
           ))
         }
+      </div>
         { 
           data !== null &&
-          <div className="actions col-12">
-            <button className="btn btn-light">
-              <span>See more <i className="arrow right"></i></span>
-            </button>
+          <div className="row all-homes-bottom">
+            <div className="col-12 actions">
+              <button className="btn btn-light">
+                <span>See more <i className="arrow right"></i></span>
+              </button>
+            </div>
           </div>
         }
-      </div>
     </div>
   )
 }
