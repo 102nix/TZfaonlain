@@ -1,24 +1,38 @@
 .all-homes{
-  display: flex;
-  justify-content: center;
-  .nav-link{
-    padding: 0;
-    color: #000;
+  width: 100%;
+  height: auto;
+  .all-homes-title{
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: green;
+    font-size: 21px;
   }
-  .card-title{
-    font-size: 18px;
-  }
-}
-.all-homes-bottom {
-  .actions{
+  .homes{
+    width: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    .home-link{
+      display: block;
+      flex: 0 0 320px;
+      text-decoration: none;
+      color: rgb(90, 90, 90);
+    }
+  }
+  .homes-actions{
+    margin-top: 1rem;
+    display: flex;
     align-items: center;
-    .btn-light{
-      margin-top: 3rem;
+    justify-content: center;
+    .homes-btn{
       border-radius: 25px;
       padding: 8px 25px;
       border: .5px solid rgb(153, 153, 153);
+      cursor: pointer;
+      &:hover{
+        background-color: rgb(215, 219, 219);
+      }
       span{
         i{
           border: solid black;
@@ -35,8 +49,14 @@
   }
 }
 
-@media(max-width: 414px){
-  .nav-link{
-    margin-top: 1rem;
+@media (max-width: 767px){
+  .all-homes{
+    .homes{
+      .home-link{
+        flex: 0 1 auto;
+      }
+    }
   }
+  
 }
+

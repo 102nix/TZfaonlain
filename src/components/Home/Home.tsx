@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
 import { imgsArr } from '../../imgs/ImgsComp'
 import { ValueStateType } from '../../types/stateType'
 import './Home.scss'
@@ -7,23 +6,21 @@ import './Home.scss'
 export const Home: React.FC<ValueStateType> = props => {
 
   return (
-    <div className="col-12 col-lg-4">
-      <Card style={{ width: '18rem' }}>
-        <div className="img-and-label">
-          <Card.Img variant="top" src={imgsArr[props.id! - 1]} />
+    <div className="card">
+        <div className="card__img">
+          <img src={imgsArr[props.id! - 1]} />
           {
-           (+props.id! === 3 || +props.id! === 6 || +props.id! === 9 || +props.id! === 12) ?   
-            <div className="btn-danger label-buttom">Restaurant & Support available</div> :
-            <div className="btn-info label-buttom">Independing living</div> 
-          }
+            (+props.id! === 3 || +props.id! === 6 || +props.id! === 9 || +props.id! === 12) ?   
+              <div className="label-home orange-bg">Restaurant & Support available</div> :
+              <div className="label-home blue-bg">Independing living</div> 
+          } 
         </div>
-        <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text>{props.address}</Card.Text>
-          <Card.Text className="price">New Properties for Sale From <strong>&#8364;214,999</strong></Card.Text> 
-          <Card.Text>Shared Ownership Available</Card.Text>
-        </Card.Body>
-      </Card>
+        <div className="card__body">
+          <div className="card__title">{props.title}</div>
+          <div className="card__text address">{props.address}</div>
+          <div className="card__text price">New Properties for Sale From <span>&#8364;214,999</span></div> 
+          <div className="card__text">Shared Ownership Available</div>
+        </div>
     </div>
   )
 }

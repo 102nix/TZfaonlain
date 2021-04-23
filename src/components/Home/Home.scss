@@ -1,20 +1,45 @@
-.img-and-label{
-  position: relative;
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  border: 1px solid #ccc;
+  background-color: rgb(243, 241, 241);
+  height: auto;
+  .card__img{
+    flex: 0 0 auto;
+    position: relative;
+    & img{
+      max-width: 100%;
+      display: block;
+    }
+    .label-home{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: #fff;
+      padding: 7px;
+    }
+    .label-home.orange-bg{
+      background-color: rgb(240, 124, 29);
+    }
+    .label-home.blue-bg{
+      background-color: rgb(11, 159, 196);
+    }
+  }
+  .card__body{
+    padding: 10px 7px;
+    .card__title{
+      color: #000;
+      font-weight: bold;
+    }
+    .card__text.address{
+      margin: 5px 0 15px 0;
+    }
+    .card__text.price span{
+      color: #000;
+      font-weight: bold;
+    }
+  }
 }
-.label-buttom{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 7px 6px;
-  font-size: 12px;
-  font-weight: bold;
-}
-.btn-danger{
-  background-color: rgb(248, 134, 81);
-}
-.card-body{
-  padding: 8px;
-}
-.card-text{
-  font-size: 15px;
-}
+

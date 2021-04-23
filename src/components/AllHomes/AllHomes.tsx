@@ -10,6 +10,7 @@ import { ValueStateType } from '../../types/stateType'
 //components:
 import Loader from '../../Loader/Loader'
 import { Home } from '../Home/Home'
+import { FilterInput } from '../FilterInput/FilterInput'
 
 export const AllHomes: React.FC = () => {
 
@@ -19,15 +20,17 @@ export const AllHomes: React.FC = () => {
   if (data === null) dispatch(actions.getHomes())
 
    return( 
-    <div className="container">
-      <div className="row all-homes">
+    <div className="all-homes">
+      <div className="all-homes-title">Our Latest Developepments</div>
+      <FilterInput />
+      <div className="homes">
         { data === null &&
           <Loader/>
         }
         {
           data?.length !== 0 &&
           data?.map((home: ValueStateType) => ( 
-            <NavLink to={`/details/${home.id}`} className="nav-link" >
+            <NavLink to={`/details/${home.id}`} className="home-link" key={home.id}>
               <Home
                 id={home.id}
                 title={home.title}
@@ -39,16 +42,14 @@ export const AllHomes: React.FC = () => {
           ))
         }
       </div>
-        { 
-          data !== null &&
-          <div className="row all-homes-bottom">
-            <div className="col-12 actions">
-              <button className="btn btn-light">
-                <span>See more <i className="arrow right"></i></span>
-              </button>
-            </div>
-          </div>
-        }
+      { 
+        data !== null &&
+        <div className="homes-actions">
+          <button className="homes-btn">
+            <span>See more <i className="arrow right"></i></span>
+          </button>
+        </div>
+      }
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Form } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { actions } from '../../redux/allAC'
 import './Input.scss'
@@ -8,11 +7,12 @@ import { AppStateType } from '../../redux/store'
 import { IValuesInput } from '../../types/InputTypes'
 import { ArrayStateType } from '../../types/stateType'
 
-export const Input: React.FC<IValuesInput> =({label, ...props}) => {
+export const Input: React.FC<IValuesInput> = ({label, ...props}) => {
 
   const [value, setValue] = useState('')
 
   const dispatch = useDispatch()
+
   const data = useSelector((state: AppStateType) => state.homesReducer.data)
 
   const filterHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,14 +29,13 @@ export const Input: React.FC<IValuesInput> =({label, ...props}) => {
   }
 
   return (
-    <Form.Group>
+    <>
       <label htmlFor={props.id || props.name}>{label}</label>
       <input
-        className="form-control"
         {...props}
         value={value}
         onChange={(e) => filterHandler(e)}
       />
-    </Form.Group>
+    </>
   )
 }

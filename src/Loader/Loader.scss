@@ -75,6 +75,13 @@
   top: 56px;
   left: 12px;
 }
+@media (max-width: 768px){
+  .lds-roller {
+    width: 30px;
+    height: 30px;
+    // left: 40%;
+  }
+}
 @keyframes lds-roller {
   0% {
     transform: rotate(0deg);
