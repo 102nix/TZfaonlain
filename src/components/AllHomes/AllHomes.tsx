@@ -21,9 +21,9 @@ export const AllHomes: React.FC = () => {
 
    return( 
     <div className="all-homes">
-      <div className="all-homes-title">Our Latest Developepments</div>
+      <div className="all-homes__title">Our Latest Developepments</div>
       <FilterInput />
-      <div className="homes">
+      <div className="all-homes__homes">
         { data === null &&
           <Loader/>
         }
@@ -44,7 +44,7 @@ export const AllHomes: React.FC = () => {
       </div>
       { 
         data !== null &&
-        <div className="homes-actions">
+        <div className="all-homes__homes-actions">
           <button className="homes-btn">
             <span>See more <i className="arrow right"></i></span>
           </button>

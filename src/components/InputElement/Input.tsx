@@ -23,7 +23,7 @@ export const Input: React.FC<IValuesInput> = ({label, ...props}) => {
       const filteredDataArr: ArrayStateType = data!.filter(home => home.title.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1)
       dispatch(actions.setAPIHomes(filteredDataArr))
     } else if (filterValue.length === 0) {
-      dispatch(actions.getHomes())
+      dispatch(actions.getHomes()) 
     }
 
   }
