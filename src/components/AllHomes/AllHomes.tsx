@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import './AllHomes.scss'
@@ -17,13 +17,17 @@ export const AllHomes: React.FC = () => {
   const dispatch = useDispatch()
   const data = useSelector((state: AppStateType) => state.homesReducer.data)
 
-  if (data === null) dispatch(actions.getHomes())
+  useEffect(() => {
+    console.log('start to dispatch data')
+    dispatch(actions.getHomes())
+  }, [])
 
    return( 
     <div className="all-homes">
       <div className="all-homes__title">Our Latest Developepments</div>
       <FilterInput />
       <div className="all-homes__homes">
+
         { data === null &&
           <Loader/>
         }
